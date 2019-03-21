@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>e Money Replica</title>
+    <link href="eMoney.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+
+    <header>
+        
+            <div class="hdr_nav">
+                <div class="logo">
+                    <a href="#">
+						<img src="https://emoneyadvisor.com/wp-content/uploads/2017/04/emoney_white.png">
+					</a>
+                </div>
+                <ul class="main-nav">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">eMoney for Enterprise</a></li>
+                    <li><a href="#">Current Customers</a></li>
+                </ul>
+                <div id="header_search">
+                    <form role="search">
+                        <div class="search">
+                            <input type="text" value="" placeholder="SEARCH" name="s" id="s">
+                            <i id="mg" class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </form>
+                    <div class="btn-orange"><i class="fa fa-download" aria-hidden="true"></i> Free Trial</div>
+                    <!-- /end of CTA button -->
+                </div>
+            </div>
+            <!-- /end of container -->
+            
+            <div id="banner">
+                <video id="video_ct" autoplay loop muted>
+                    <source src="https://emoneyadvisor.com/wp-content/uploads/2017/05/eMoney-Homepage-30sec-5-without-text.mp4" type="video/mp4">
+                </video>
+
+                <!-- Had this container outside the banner div -->
+                <div class="hero">
+                    <h1 class="static-text">Wealth Management Technology That Helps You</h1>
+                    <h1 class="type-text">
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Build Collaborative Client Relationships", "Stay Ahead of the Innovation Curve", "Drive Revenue and Growth", "Edge Out the Competition", "Create More Plans for More Clients", "See and Manage the Big Picture" ]'>
+                        <span class="wrap"></span>
+                        </a>
+                    </h1>
+                </div>
+                
+             </div>   
+            
+
+        
+    </header>
+<script>
+// Mobile dropdown menu - hidden until onclick of menu button
+jQuery(function($){
+    $( '.menu-btn' ).click(function(){
+    $('.responsive-menu').toggleClass('expand')
+    })
+})
+
+
+// Overlay on video - typewriter script
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { }";
+    document.body.appendChild(css);
+};
+</script>
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Added entire style for fonts to body */
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--color-gray);
+    font-weight: 400;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* Added entire style for links */
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.hdr_nav {
+    position: fixed; /* Added this style */
+    display: flex;
+    justify-content: center; /* Added */
+    width: 100%; /* Added */
+    /* align-items: center; not needed */
+    /* max-width: 1150px; /* Removed */
+    /* margin: auto; not needed */
+    z-index: 1; /* Added a z-index to show on top of the black transparent bg */
+}
+
+header {
+    position: relative;
+    z-index: 9;
+}
+
+/* Added entire class */
+.logo { 
+    position: relative;
+    top: 58px;
+    margin-right: 25px;
+    width: 200px;
+    height: 70px;
+}
+
+.logo img {
+    /* width: 200px; removed */
+    /* height: 70; /* removed */
+    /* float: left; not needed */
+    /* margin-top: 50px; removed
+    /* margin-left: 50px; not needed */
+    width: 100%;
+    height: auto;
+}
+
+.main-nav {
+    /* margin-left: 40px; not needed */
+    /* float: right; not needed */
+    list-style: none;
+    margin-top: 75px; /* updated */
+    /* margin-right: 0px; not needed */
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav li a {
+    color: white;
+    /* text-decoration: none; removed */
+    /* font-family: "Roboto", sans-serif; removed */
+    font-weight: 900; /* changed to 900 */
+    font-size: 13px;
+    padding: 10px; /* Added padding */
+    /* margin: 14px; not needed */
+    /* border: 1px solid transparent; not needed */
+}
+
+.main-nav li a:hover {
+    background-color: solid transparent;
+    border-radius: 5px;
+}
+
+#header_search {
+   position: relative;
+   top: 20px;
+   left: 25px; /* added */
+
+}
+
+.search {
+    text-align: right;
+    color: white;
+}
+
+#header_search input::placeholder {
+    color: white;
+}
+
+#s {
+    color: white;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 10px;
+    top: 0;
+    right: 100%;
+    height: 30px;
+    text-align: right;
+    letter-spacing: .1em;
+}
+
+#mg {
+    color: white;
+}
+
+.btn-orange {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: orange;
+    padding: 19px 15px;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+
+.btn-orange:hover {
+    background-color: #fc9b1a;
+}
+
+#every {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#banner {
+    position: relative;
+    /*top: 0; removed */
+    width: 100%;
+    min-height: 725px;
+    /* text-align: center; removed */
+    /* background-size: cover; removed */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#video_ct {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-image: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero {
+    position: relative; /* change */
+    top: 275px; /* added */
+    font-family: 'Lato', sans-serif; /* added */
+}
+/* Added entire style */
+.hero .static-text {
+    font-size: 40px;
+    line-height: 65px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+.type-text {
+    text-align: center;
+}
+
+/* Added entire style */
+.typewrite span {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    min-height: 64px;
+    color: white;
+}
